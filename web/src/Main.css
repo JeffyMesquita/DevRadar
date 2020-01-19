@@ -1,0 +1,17 @@
+main {
+  flex: 1;
+}
+
+main ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Pode ser usado 1fr 1fr para o mesmo funcionamento */
+  gap: 20px;
+  list-style: none;
+}
+
+@media (max-width: 640px){
+  main ul {
+    grid-template-columns: 1fr;
+  }
+}
+
