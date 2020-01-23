@@ -5,18 +5,18 @@ import './global.css';
 import './App.css';
 import './Sidebar.css';
 import './Main.css';
+
 // Componente -> Bloco isolado de HTML, CCS e JS o qual não interfere no restante da aplicação
 // Propriedade ->Informações que um componente PAI passa para o componente FILHO
 // Estado -> Informações mantidas pelo componente (Lembrar: Imutabilidade)
 
-import DevItem from './components/DevItem';
+
 import DevForm from './components/DevForm';
-
-
+import DevItem from './components/DevItem';
 
 function App() {
-  const [devs, setDevs] = useState([]);   
-  
+  const [devs, setDevs] = useState([]);
+
   useEffect(() => {
     async function loadDevs() {
       const response = await api.get('/devs');
@@ -26,9 +26,9 @@ function App() {
 
     loadDevs();
   }, []);
-  
-  async function handleAddDev(data){    
-    const response = await api.post('/devs', data)    
+
+  async function handleAddDev(data) {
+    const response = await api.post('/devs', data)
 
     setDevs([...devs, response.data]);
   }
@@ -39,11 +39,12 @@ function App() {
         <strong>Cadastrar</strong>
         <DevForm onSubmit={handleAddDev} />
       </aside>
+
       <main>
         <ul>
           {devs.map(dev => (
             <DevItem key={dev._id} dev={dev} />
-          ))}                   
+          ))}
         </ul>
       </main>
     </div>

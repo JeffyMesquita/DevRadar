@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-function DevForm(onSubmit) {
-  const [ github_username, setGithubUsername]= useState('');
+function DevForm({ onSubmit }) {
+  const [github_username, setGithubUsername] = useState('');
   const [techs, setTechs] = useState('');
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
@@ -20,32 +20,31 @@ function DevForm(onSubmit) {
       {
         timeout: 30000,
       }
-    );
+    )
   }, []);
 
   async function handleSubmit(e) {
-    e.preventDefault()
-    // eslint-disable-next-line
+    e.preventDefault();
+
     await onSubmit({
-        github_username,
-        techs,
-        latitude,
-        longitude
-    })
+      github_username,
+      techs,
+      latitude,
+      longitude,
+    });
 
+    setGithubUsername('');
+    setTechs('');
+  }
 
-    setGithubUsername('')
-    setTechs('')
-}
-
-  return(
+  return (
     <form onSubmit={handleSubmit}>
       <div className="input-block">
         <label htmlFor="github_username">Usuário do Github</label>
         <input 
           name="github_username" 
-          id="username_github"  
-          required 
+          id="github_username" 
+          required
           value={github_username}
           onChange={e => setGithubUsername(e.target.value)}
         />
@@ -53,10 +52,10 @@ function DevForm(onSubmit) {
 
       <div className="input-block">
         <label htmlFor="techs">Tecnologias</label>
-        <input 
-          name="techs" 
-          id="techs"  
-          required 
+        <input
+          name="techs"
+          id="techs"
+          required
           value={techs}
           onChange={e => setTechs(e.target.value)}
         />
@@ -69,26 +68,26 @@ function DevForm(onSubmit) {
             type="number" 
             name="latitude" 
             id="latitude" 
-            value={latitude} 
-            required
+            required 
+            value={latitude}
             onChange={e => setLatitude(e.target.value)}
           />
         </div>
 
         <div className="input-block">
           <label htmlFor="longitude">Longitude</label>
-          <input 
-            type="number" 
-            name="longitude" 
-            id="longitude"  
+          <input
+            type="number"
+            name="longitude"
+            id="longitude"
+            required
             value={longitude}
-            required 
             onChange={e => setLongitude(e.target.value)}
           />
         </div>
       </div>
-      
-    <button  type="submit">Salvar</button>
+
+      <button type="submit">Salvar</button>
     </form>
   );
 }
