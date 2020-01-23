@@ -1,9 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');//permite o acesso de APIs de outros endereços 
-const routes = require('../src/routes');
+const http = require('http');
+
+const routes = require('./routes');
+const { setupWebsocket } = require('./websocket');
 
 const app = express();
+const server = http.Server(app);
+
+setupWebsocket(server);
 
 // MongoDB (Não-Relacional)
 mongoose.connect('mongodb+srv://omnistack:omnistack@devradar-uhsgi.mongodb.net/week10?retryWrites=true&w=majority', {
@@ -17,8 +23,5 @@ app.use(express.json());
 app.use(routes);
 
 
-
-
-
-app.listen(3333);
+server.listen(3333);
 

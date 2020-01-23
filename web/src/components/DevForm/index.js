@@ -23,19 +23,20 @@ function DevForm(onSubmit) {
     );
   }, []);
 
-  async function handleSubmit(e){
-    e.preventDefault();
-
+  async function handleSubmit(e) {
+    e.preventDefault()
+    // eslint-disable-next-line
     await onSubmit({
-      github_username,
-      techs,
-      latitude,
-      longitude,
-    });
+        github_username,
+        techs,
+        latitude,
+        longitude
+    })
 
-    setGithubUsername('');
-    setTechs('');
-  }
+
+    setGithubUsername('')
+    setTechs('')
+}
 
   return(
     <form onSubmit={handleSubmit}>

@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Jeferson\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @react-native-commu/masked-view
+  C:\Program Files\nodejs\node.exe C:\Users\Jeferson\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add socket.io-client
 
 PATH: 
   C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\MATLAB\R2016a\runtime\win64;C:\Program Files\MATLAB\R2016a\bin;C:\Program Files\MATLAB\R2016a\polyspace\bin;C:\ProgramData\chocolatey\bin;C:\Users\Jeferson\AppData\Roaming\npm;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_231\bin;C:\Program Files\Git\cmd;C:\Users\Jeferson\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Docker Toolbox;C:\Users\Jeferson\AppData\Local\Yarn\bin;C:\tools\git\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MongoDB\Server\4.2\bin;C:\Users\Jeferson\AppData\Roaming\npm; C:\Users\Jeferson\AppData\Local\Android\Sdk\platform-tools; C:\Users\Jeferson\ProjetosNode\FerramentasDev\sdk-tools-windows-4333796\platform-tools;C:\Users\Jeferson\ProjetosNode\FerramentasDev\sdk-tools-windows-4333796\tools;
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@react-native-commu%2fmasked-view: Not found
-      at Request.params.callback [as _callback] (C:\Users\Jeferson\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66947:18)
-      at Request.self.callback (C:\Users\Jeferson\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140665:22)
-      at Request.emit (events.js:198:13)
-      at Request.<anonymous> (C:\Users\Jeferson\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141637:10)
-      at Request.emit (events.js:198:13)
-      at IncomingMessage.<anonymous> (C:\Users\Jeferson\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141559:12)
-      at Object.onceWrapper (events.js:286:20)
-      at IncomingMessage.emit (events.js:203:15)
-      at endReadableNT (_stream_readable.js:1145:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Jeferson\projetosnode\rocketseat\omnistack10\mobile\node_modules\@babel\compat-data\node_modules\.bin'
 
 npm manifest: 
   {
@@ -37,15 +27,20 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
+      "@react-native-community/masked-view": "^0.1.6",
+      "axios": "^0.19.2",
       "expo": "~36.0.0",
+      "expo-location": "~8.0.0",
       "react": "~16.9.0",
       "react-dom": "~16.9.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
       "react-native-gesture-handler": "~1.5.0",
+      "react-native-maps": "0.26.1",
       "react-native-reanimated": "~1.4.0",
       "react-native-safe-area-context": "0.6.0",
       "react-native-screens": "2.0.0-alpha.12",
       "react-native-web": "~0.11.7",
+      "react-native-webview": "7.4.3",
       "react-navigation": "^4.0.10",
       "react-navigation-stack": "^2.0.15"
     },
@@ -1132,6 +1127,11 @@ Lockfile:
       wcwidth "^1.0.1"
       ws "^1.1.0"
   
+  "@react-native-community/masked-view@^0.1.6":
+    version "0.1.6"
+    resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.6.tgz#c7f2ac187c1f25aa8c30d11baa8f4398eca3bb84"
+    integrity sha512-PpMoeXwPUoldCRKDuSi+zK5rT+sJTW6ri6RdGPkSKRzU77Q1d9IaR0O5IKvBj0XSdL3p+dcOa05gk35aGDffBQ==
+  
   "@react-navigation/core@^3.5.1":
     version "3.5.1"
     resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"
@@ -1444,6 +1444,13 @@ Lockfile:
     version "2.1.2"
     resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
     integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+  
+  axios@^0.19.2:
+    version "0.19.2"
+    resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+    integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+    dependencies:
+      follow-redirects "1.5.10"
   
   babel-plugin-dynamic-import-node@^2.3.0:
     version "2.3.0"
@@ -2011,6 +2018,13 @@ Lockfile:
     dependencies:
       ms "2.0.0"
   
+  debug@=3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+    integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+    dependencies:
+      ms "2.0.0"
+  
   debug@^4.1.0:
     version "4.1.1"
     resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
@@ -2144,6 +2158,11 @@ Lockfile:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
     integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
+  
+  escape-string-regexp@2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
+    integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
   
   escape-string-regexp@^1.0.5:
     version "1.0.5"
@@ -2536,6 +2555,13 @@ Lockfile:
       locate-path "^5.0.0"
       path-exists "^4.0.0"
   
+  follow-redirects@1.5.10:
+    version "1.5.10"
+    resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+    integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+    dependencies:
+      debug "=3.1.0"
+  
   fontfaceobserver@^2.1.0:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/fontfaceobserver/-/fontfaceobserver-2.1.0.tgz#e2705d293e2c585a6531c2a722905657317a2991"
@@ -2802,7 +2828,7 @@ Lockfile:
       strip-ansi "^4.0.0"
       through "^2.3.6"
   
-  invariant@^2.2.2, invariant@^2.2.4:
+  invariant@2.2.4, invariant@^2.2.2, invariant@^2.2.4:
     version "2.2.4"
     resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
     integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -4255,6 +4281,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
     integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
   
+  react-native-maps@0.26.1:
+    version "0.26.1"
+    resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.26.1.tgz#6ec316259b38d259c8974448d894bd7a23101da4"
+    integrity sha512-p4VTB8YB5ZmOmDRCUpoHZkm05amZwhIo04AJMBbB9+JAR2PNNfpo0vceoWX0Mag4wnePkdzPomeWMplr/wimTg==
+  
   react-native-reanimated@~1.4.0:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
@@ -4306,6 +4337,14 @@ Lockfile:
       normalize-css-color "^1.0.2"
       prop-types "^15.6.0"
       react-timer-mixin "^0.13.4"
+  
+  react-native-webview@7.4.3:
+    version "7.4.3"
+    resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-7.4.3.tgz#e00e92e17f7389d84d09f5900652501ff2665915"
+    integrity sha512-4n72B2D7n1xOQSoCSD1qk9D7JksyT4d6nk8QG9guZKZn3KXQL5EejwE2yhh1TxZRQpr+OD3a96rb+rA/UEnvrQ==
+    dependencies:
+      escape-string-regexp "2.0.0"
+      invariant "2.2.4"
   
   "react-native@https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz":
     version "0.61.4"
